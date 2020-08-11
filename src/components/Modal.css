@@ -1,0 +1,5 @@
+.modal {
+    --height: 40%;
+    --width: 80%;
+    margin: auto;
+}
