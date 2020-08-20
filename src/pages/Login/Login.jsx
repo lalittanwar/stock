@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import { IonContent,IonLabel,IonItem,IonHeader,IonPage,IonTitle,IonToolbar,IonInput,IonButton } from '@ionic/react';
+import { IonContent,IonLabel,IonItem,IonHeader,IonPage,IonTitle,IonToolbar,IonInput,IonButton,IonRow } from '@ionic/react';
 import { loginUser } from '../../firebaseConfig';
 import { useHistory,Link } from 'react-router-dom';
 import Toast from '../../components/Toast';
@@ -27,24 +27,25 @@ function Login () {
     }
 
     return (
-        <IonPage>
+        <IonPage className="bg-page">
             <IonHeader>
                 <IonToolbar color="primary">
                     <IonTitle>Login</IonTitle>
                 </IonToolbar>
             </IonHeader>
-            <IonContent>
-
+            <IonContent className="bg-page">
                 <IonItem>
-                    <IonLabel position="stacked">User Name*</IonLabel>
+                    <IonLabel position="floating">User Name</IonLabel>
                     <IonInput value={ username } onIonChange={ e => setUsername( e.target.value ) }></IonInput>
                 </IonItem>
                 <IonItem>
-                    <IonLabel position="stacked">Password*</IonLabel>
-                    <IonInput value={ password } onIonChange={ e => setPassword( e.target.value ) }></IonInput>
-                </IonItem>
-                <IonButton onClick={ () => login() }>Login</IonButton>
-                <Link to="/signup" >Create an Account</Link>
+                    <IonLabel position="floating">Password</IonLabel>
+                    <IonInput type="password" alue={ password } onIonChange={ e => setPassword( e.target.value ) }></IonInput>
+                </IonItem><br />
+                <IonRow className="login-btn">
+                    <IonButton color="danger" onClick={ () => login() }>Login</IonButton>
+                    <IonButton color="tertiary" onClick={ () => history.push( '/signup' ) }>Create an Account</IonButton>
+                </IonRow>
                 <Toast showToast={ showToast } message={ message } setShowToast={ setShowToast } />
             </IonContent>
         </IonPage>

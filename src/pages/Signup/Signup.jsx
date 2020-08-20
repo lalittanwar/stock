@@ -41,10 +41,11 @@ function Signup () {
                 </IonItem>
                 <IonItem>
                     <IonLabel position="stacked">Password*</IonLabel>
-                    <IonInput value={ password } onIonChange={ e => setPassword( e.target.value ) }></IonInput>
-                </IonItem>
-                <IonButton onClick={ () => signup() }>Signup</IonButton><br />
-                <Link to='/login'>Already have an Account</Link>
+                    <IonInput type="password" value={ password } onIonChange={ e => setPassword( e.target.value ) }></IonInput>
+                </IonItem><br />
+                <IonButton color="secondary" onClick={ () => signup() }>Signup</IonButton>
+                <IonButton color="danger" onClick={ () => history.push( '/login' ) }>Already have an Account</IonButton><br />
+
                 <Toast showToast={ showToast } message={ message } setShowToast={ setShowToast } />
             </IonContent>
         </IonPage>

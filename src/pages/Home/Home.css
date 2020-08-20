@@ -3,3 +3,23 @@
     bottom: 5%;
     right: 5%;
 }
+.profile-chip {
+    float: right;
+    position: relative;
+}
+.sc-ion-popover-md-h {
+    --width: auto;
+    position: absolute;
+    top: 0;
+}
+.popovers {
+    position: absolute;
+    top: 0;
+}
+.popover-content.sc-ion-popover-md {
+    position: absolute;
+    top: 9% !important;
+    right: 20% !important;
+    left: auto !important;
+    background: black;
+}

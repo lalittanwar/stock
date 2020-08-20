@@ -24,6 +24,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
+import Landing from './pages/Landing/Landing';
 
 const App = () => {
 
@@ -38,12 +39,11 @@ const App = () => {
     return ( <IonApp>
         <IonReactRouter>
             <IonRouterOutlet>
+                <Route path="/landing" component={ Landing } exact={ true } />
                 <Route path="/home" component={ Home } exact={ true } />
                 <Route path="/login" component={ Login } exact={ true } />
                 <Route path="/signup" component={ Signup } exact={ true } />
-                { loggedIn ?
-                    <Route exact path="/" render={ () => <Redirect to="/home" /> } /> :
-                    <Route exact path="/" render={ () => <Redirect to="/login" /> } /> }
+                <Route exact path="/" render={ () => <Redirect to="/landing" /> } />
             </IonRouterOutlet>
         </IonReactRouter>
     </IonApp> )

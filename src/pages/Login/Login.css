@@ -1,0 +1,8 @@
+.bg-page {
+    --background: darkorange;
+    background-color: darkorange;
+}
+.login-btn {
+    padding: 0px 0px 0px 10%;
+    margin: 10% 0 0px 0px;
+}

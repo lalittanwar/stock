@@ -1,4 +1,6 @@
-var firebase = require( 'firebase' );
+// var firebase = require( 'firebase' );
+import firebase from "firebase"
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyDQxMSd02yG1HiN5_SRVcQ4Iwq3Li77bWM",
@@ -11,10 +13,7 @@ const firebaseConfig = {
     measurementId: "G-KD6BZ9LQ02"
 };
 
-let fireDb = firebase.initializeApp( firebaseConfig );
-
-export const db = fireDb.firestore();
-
+firebase.initializeApp( firebaseConfig );
 
 export const loginUser = async ( username,password ) => {
     let email = `${ username }@mail.com`;
@@ -39,4 +38,4 @@ export const signupUser = async ( username,password ) => {
     }
 }
 
-export default fireDb.database().ref();
+export default firebase;
